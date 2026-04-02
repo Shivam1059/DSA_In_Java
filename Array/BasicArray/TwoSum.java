@@ -1,48 +1,45 @@
-
-import java.util.ArrayList;
 import java.util.Scanner;
 
-class Test {
-
-    public int[] towSum(ArrayList<Integer> list, int target) {
-        int n = list.size();
-        int i = 0;
-        while (i < n) {
-            for (int j = i + 1; j < n; j++) {
-                int sum = list.get(i) + list.get(j);
-                if (sum == target) {
-                    return new int[]{i, j};
+class Test{
+    public int[] towSum(int[]arr, int target){
+    
+        int[]list = new int[2];    
+        int left = 0, right = arr.length-1;
+        while(left < right){
+            int currSum = arr[left] + arr[right];
+            if(currSum == target){
+                list[0] = left;
+                list[1] = right;
+            }else{
+                if(left < right){
+                    left++;
+                }else{
+                    right--;
                 }
             }
-            i++;
         }
-        return new int[]{};
+        return list ;   
     }
 }
 
-public class TwoSum {
-
-    public static void main(String[] args) {
+public class TwoSum{
+    public static void main(String[]  args){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the size of array : ");
+        System.out.println(" Enter the size of array : ");
         int size = sc.nextInt();
 
-        ArrayList<Integer> list = new ArrayList<>();
-        for (int i = 0; i < size; i++) {
-            System.out.println("Enter the element " + i + " :  ");
-            int num = sc.nextInt();
-            list.add(num);
+        int[] arr = new int[size];
+        
+        for(int i=0; i<size; i++){
+            System.out.println("Enter the element "+i+ ": ");
+            arr[i] = sc.nextInt();
         }
-        System.out.println("Enter the target : ");
-        int Target = sc.nextInt();
 
-        Test test = new Test();
-        int[] result = test.towSum(list, Target);
-        if (result.length > 0) {
-            System.out.println("Indices: " + result[0] + ", " + result[1]);
-        } else {
-            System.out.println("No pair found");
-        }
+        System.out.println("Enter the target : ");
+        int target = sc.nextInt();
+       
+       Test t = new Test();
+       t.towSum(arr, target);
 
     }
 }

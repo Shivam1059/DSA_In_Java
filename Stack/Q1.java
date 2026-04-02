@@ -10,6 +10,7 @@ class Stack{
            stack = new int [size];
            top = -1;
        }
+       
 
        void push(int a){
          if(top == size-1){
