@@ -1,0 +1,45 @@
+/*
+You are working as a junior developer for an education-tech company. The company provides digital tools for teachers to analyze students' test scores. A teacher enters the test scores of students into a grid (2D array), where each row represents a student and each column represents a test.
+
+Your task is to write a Java program that helps the teacher quickly calculate:
+
+The sum of all even test scores.
+
+The sum of all odd test scores.
+
+This helps the teacher understand score patterns more easily for planning further practice sessions.
+*/
+
+
+class Ques1{
+   public static void main(String[] args){
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter the size of row");
+    int row = sc.nextInt();
+    
+    if(row <= 0){
+      System.out.println("Input is invalid!");
+    }
+    
+    System.out.println("Enter the size of col");
+     int col  = sc.nextInt();
+      
+     if(col <= 0){
+     System.out.println("Input is invalid!");
+     
+     int[][] arr = new int[row][col];
+
+     for(int i=0; i<row; i++){
+       for(int j=0; j<col; j++){
+         System.out.println("enter the student id and test Score ");
+         arr[i][j] = sc.nextInt();
+       }
+     }
+
+      for(int i=0; i<row; i++){
+       for(int j=0; j<col; j++){
+       System.out.println("Infomation : "+arr[i][j]);
+      }
+     }
+   }
+}
