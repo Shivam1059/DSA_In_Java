@@ -13,15 +13,15 @@ class Ques3{
      System.out.println("Enter the string : ");
      StringBuilder str = new StringBuilder(sc.nextLine());
      
+     Set<Character> set = new HashSet<>();
      String newStr = "";
      for(int i=0; i<str.length(); i++){
-         for(int j=0; j<str.length(); j++){
-           if(str.charAt(i) != str.charAt(j)){
-                if(
-           }
-        }
-     }
+         set.add(str.charAt(i));
+      }
      
-  System.out.println("New update String : "+newStr); 
+    for(char c : set){
+         newStr += c;
+    }
+        System.out.println("New update String : "+newStr); 
   }
 }
