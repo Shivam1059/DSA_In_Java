@@ -11,7 +11,7 @@ import java.util.Arrays;
 
       char[] a = s1.toCharArray();
       char[] b = s2.toCharArray();
-
+    
       Arrays.sort(a);
       Arrays.sort(b);
 
