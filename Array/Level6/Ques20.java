@@ -16,38 +16,44 @@ The result of the merge is [1,2,2,3,5,6] with the underlined elements coming fro
 */
 import java.util.ArrayList;
 import java.util.Arrays;
+
+class Test{
+  public int[] mergeSorted(int[]arr1, int m , int[]arr2, int n ){
+     int index = m + n -1;
+     int i = m -1;
+     int j = n - 1;
+
+    while( i >= 0 && j >= 0){
+        if(arr1[i] >= arr2[j]){
+          arr1[index--] = arr1[i--];
+        }else{
+         arr1[index--] = arr2[j--];
+         }
+    }
+    while( j >= 0){
+        arr1[index] = arr2[j];
+          index--;
+          j--;
+     }
+     return arr1;
+  }
+  public void printArray(int[]arr){
+    for(int i=0; i<arr.length; i++){
+        System.out.print(arr[i]+" ");
+     }
+  }
+}
 class Ques20{
     public static void main(String[] args){
     
     int[] num1 = {1,2,3,0,0,0};
     int[] num2 = {2,5,6};
- 
-    ArrayList<Integer> list = new ArrayList<>();
-    
-   for(int i : num1){
-      if(i > 0) list.add(i);
-   }
-   for(int i : num2){
-      if(i > 0) list.add(i);
-   }
- 
-     int start = 0, end = list.size()-1;
-   while(start < end){
-     if(list.get(start) > list.get(end)){
-        int temp = list.get(start);
-        list.get(start) = list.get(end);
-        list.get(end) = temp;
-        
-       start++;
-      }else{
-        end--;
-     }
-    }
+    int n  = 3;
+    int m =  3;
 
-   for(int i : list){
-    System.out.print(i+",");
-   }
+    Test t = new Test();
+     int[]arr =  t.mergeSorted(num1,m, num2, n);
+     t.printArray(arr);
   
-
   }
 }
