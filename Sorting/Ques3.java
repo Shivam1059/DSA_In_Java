@@ -39,7 +39,6 @@ public class Ques3{
     HashSort t = new HashSort();
    
     t.hashSort(arr);
- 
 
   }
 
