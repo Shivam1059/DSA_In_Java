@@ -25,7 +25,6 @@ class  Test{
              else{
                 currSum = currSum + arr[i];
              }
-            
             if(maxSum < currSum ){
                maxSum = currSum;
            }

@@ -20,7 +20,6 @@ class Test{
 
      for(int i=0; i<n; i++){
         newarr[i] = arr[i]*arr[i];
-
      }
       Arrays.sort(newarr);
       return newarr;
@@ -85,6 +84,6 @@ class Ques17{
     int[] numarr =  t.squareofSortedArray(arr);
     t.printArray(numarr);
    
-   sc.close();
+    sc.close();
   }
 }

@@ -50,8 +50,12 @@ class Ques6{
   System.out.println("Enter the value b : ");
   int b = sc.nextInt();
 
-  Test t = new Test();
-  System.out.println(t.decimalToBinary(a));
+  Test t = new Test():
+  int num1 = Integer.parseInt(t.decimalToBinary(a)); 
+  int num2 = Integer.parseInt(t.decimalToBinary(b)); 
+  
+  int ans = num1 + nums2;
+
 
   }
 }

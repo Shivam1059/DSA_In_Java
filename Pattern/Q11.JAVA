@@ -23,6 +23,7 @@ class Q11{
                     System.out.print("  ");
                 }
             }
+           
             System.out.println();
             
         }

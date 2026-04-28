@@ -19,19 +19,12 @@ class Q12{
         //     System.out.println();
         // }
 
-        //hollow Trangle
+        // ulta Trangle
         for(int i=0; i<rows; i++){
-           for(int j=rows; j>i; j--){
-            System.out.println(" ");
-           }
-           for(int j=0; j<(2*i-1); j++){
-                 if(j==i){
-                    System.out.print(" ");
-                 }else{
-                    System.out.println("*"+" ");
-                 }
-           }
-           System.out.println();
+            for(int j=)
+
+            System.out.println();
         }
+        
     }
 }

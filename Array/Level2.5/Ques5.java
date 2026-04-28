@@ -2,6 +2,26 @@
 
 import java.util.Scanner;
 
+class Test{
+   public static int[][] SumArray(int[][]arr,int col, int row, int[][]arr1, int row1, int col1){
+    int n = row + row1;
+    int m = col + col1;
+    int[][] arr3 = new int[n][m];
+    
+    for(int i=0; i<row; i++){
+       for(int j=0; j<col; j++){
+           int a =  arr[i][j];
+       }
+    }
+
+    for(int i=0; j<row1; i++){
+       for(int j=0; j<col1; j++){
+          int b =  arr1[i][j] ;
+       }
+    }
+    
+  }
+}
 public class Ques5{
    public static void main(String[] args){
      Scanner sc = new Scanner(System.in);
