@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Software Engineer & Full Stack Developer Portfolio - Building premium web experiences with modern technologies" />
+  <meta name="keywords" content="software engineer, full stack developer, react, java, spring boot, freelance" />
+  <meta property="og:title" content="Software Engineer | Full Stack Developer" />
+  <meta property="og:description" content="Premium portfolio showcasing cutting-edge software engineering projects" />
+  <title>DevFolio — Software Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=Cabinet+Grotesk:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- LOADING SCREEN -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-ring"></div>
+      <span class="loader-text">INITIALIZING<span class="blink">_</span></span>
+    </div>
+  </div>
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo">
+      <span class="logo-bracket">&lt;</span>DEV<span class="logo-accent">/</span><span class="logo-bracket">&gt;</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#freelance">Hire Me</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span class="theme-icon">☀</span>
+      </button>
+      <a href="#contact" class="nav-cta">Get In Touch</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" onclick="closeMobileMenu()">About</a></li>
+      <li><a href="#skills" onclick="closeMobileMenu()">Skills</a></li>
+      <li><a href="#projects" onclick="closeMobileMenu()">Projects</a></li>
+      <li><a href="#freelance" onclick="closeMobileMenu()">Hire Me</a></li>
+      <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <section id="hero">
+    <canvas id="heroCanvas"></canvas>
+    <div class="hero-grid-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span>Available for Freelance</span>
+      </div>
+      <h1 class="hero-name">
+        <span class="line-1">ALEX</span>
+        <span class="line-2">MORGAN</span>
+      </h1>
+      <div class="hero-title">
+        <span class="title-prefix">{ </span>
+        <span id="typewriter"></span>
+        <span class="cursor-blink">|</span>
+        <span class="title-suffix"> }</span>
+      </div>
+      <p class="hero-desc">
+        Crafting intelligent, scalable web experiences with Java, Spring Boot &amp; React.
+        Turning complex problems into elegant solutions — one commit at a time.
+      </p>
+      <div class="hero-btns">
+        <a href="#freelance" class="btn-primary">
+          <span>Hire Me</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#projects" class="btn-secondary">View Projects</a>
+        <a href="#" class="btn-ghost" id="resumeBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/></svg>
+          Resume
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num" data-target="24">0</span><span>Projects</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-num" data-target="12">0</span><span>Technologies</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-num" data-target="500">0</span><span>DSA Solved</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="code-window">
+        <div class="window-bar">
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          <span class="window-title">portfolio.java</span>
+        </div>
+        <pre class="code-content"><code><span class="kw">public class</span> <span class="cls">Developer</span> {
+
+  <span class="kw">private</span> String name = <span class="str">"Alex Morgan"</span>;
+  <span class="kw">private</span> String[] skills = {
+    <span class="str">"Java"</span>, <span class="str">"Spring Boot"</span>,
+    <span class="str">"React"</span>, <span class="str">"Node.js"</span>,
+    <span class="str">"SQL"</span>, <span class="str">"REST APIs"</span>
+  };
+  <span class="kw">private</span> <span class="cls">boolean</span> available = <span class="kw">true</span>;
+
+  <span class="kw">public</span> String build() {
+    <span class="kw">return</span> <span class="str">"Premium Solutions"</span>;
+  }
+
+  <span class="kw">public static void</span> main(String[] args){
+    <span class="kw">new</span> <span class="cls">Developer</span>().build();
+    <span class="cmt">// Output: 🚀 Success!</span>
+  }
+}</code></pre>
+      </div>
+      <div class="float-badges">
+        <div class="float-badge" style="--delay:0s">☕ Java</div>
+        <div class="float-badge" style="--delay:0.4s">⚛ React</div>
+        <div class="float-badge" style="--delay:0.8s">🌿 Spring</div>
+        <div class="float-badge" style="--delay:1.2s">🗄 SQL</div>
+        <div class="float-badge" style="--delay:1.6s">🤖 AI/ML</div>
+        <div class="float-badge" style="--delay:2s">🔗 APIs</div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">01 — About</span>
+        <h2 class="section-title">The Human Behind the Code</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-visual">
+          <div class="avatar-container">
+            <div class="avatar-ring"></div>
+            <div class="avatar-inner">
+              <div class="avatar-placeholder">
+                <svg viewBox="0 0 200 200" fill="none">
+                  <circle cx="100" cy="80" r="40" fill="var(--accent)" opacity="0.3"/>
+                  <path d="M30 180 Q100 130 170 180" fill="var(--accent)" opacity="0.2"/>
+                  <circle cx="100" cy="80" r="35" fill="var(--accent)" opacity="0.15"/>
+                  <text x="100" y="88" text-anchor="middle" fill="var(--accent)" font-size="40">👨‍💻</text>
+                </svg>
+              </div>
+            </div>
+            <div class="tech-orbit">
+              <div class="orbit-item" style="--i:0">☕</div>
+              <div class="orbit-item" style="--i:1">⚛</div>
+              <div class="orbit-item" style="--i:2">🌿</div>
+              <div class="orbit-item" style="--i:3">🤖</div>
+            </div>
+          </div>
+          <div class="about-stats-grid">
+            <div class="about-stat-card">
+              <span class="asc-num" data-target="24">0</span>
+              <span>Projects Done</span>
+            </div>
+            <div class="about-stat-card">
+              <span class="asc-num" data-target="12">0</span>
+              <span>Technologies</span>
+            </div>
+            <div class="about-stat-card">
+              <span class="asc-num" data-target="500">0</span>
+              <span>DSA Problems</span>
+            </div>
+            <div class="about-stat-card">
+              <span class="asc-num" data-target="2">0</span>
+              <span>Years Learning</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-content">
+          <p class="about-intro">
+            I'm a passionate <strong>Software Engineer &amp; Full Stack Developer</strong> who believes great software should be both powerful and beautiful. I specialize in building AI-integrated, scalable web applications.
+          </p>
+          <p class="about-body">
+            From crafting pixel-perfect UIs with React to architecting robust backend systems with Java Spring Boot, I bridge the gap between design and engineering. My obsession with modern AI technologies drives me to embed intelligent features into every product I build.
+          </p>
+          <div class="about-tags">
+            <span>☕ Java</span>
+            <span>🌿 Spring Boot</span>
+            <span>⚛ React</span>
+            <span>📜 JavaScript</span>
+            <span>🗄 SQL</span>
+            <span>🔗 REST APIs</span>
+            <span>🤖 AI/ML</span>
+            <span>📊 DSA</span>
+          </div>
+          <div class="journey-timeline">
+            <h3>Learning Journey</h3>
+            <div class="timeline">
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-content">
+                  <span class="tl-year">2022</span>
+                  <h4>Started Programming</h4>
+                  <p>Dived into Java, Data Structures & Algorithms</p>
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-content">
+                  <span class="tl-year">2023</span>
+                  <h4>Full Stack Development</h4>
+                  <p>Built first React + Spring Boot applications</p>
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-content">
+                  <span class="tl-year">2024</span>
+                  <h4>AI Integration</h4>
+                  <p>Started integrating AI/ML into web projects</p>
+                </div>
+              </div>
+              <div class="tl-item active">
+                <div class="tl-dot"></div>
+                <div class="tl-content">
+                  <span class="tl-year">2025 →</span>
+                  <h4>Freelancing & Open Source</h4>
+                  <p>Delivering premium solutions for global clients</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS ========== -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">02 — Skills</span>
+        <h2 class="section-title">Tech Arsenal</h2>
+      </div>
+      <div class="skills-tabs">
+        <button class="skill-tab active" data-tab="frontend">Frontend</button>
+        <button class="skill-tab" data-tab="backend">Backend</button>
+        <button class="skill-tab" data-tab="database">Database</button>
+        <button class="skill-tab" data-tab="tools">Tools</button>
+        <button class="skill-tab" data-tab="ai">AI/ML</button>
+      </div>
+      <div class="skills-content">
+        <!-- Frontend -->
+        <div class="skill-panel active" id="tab-frontend">
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <div class="sb-info"><span>React.js</span><span>90%</span></div>
+              <div class="sb-track"><div class="sb-fill" data-w="90"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="sb-info"><span>JavaScript (ES6+)</span><span>88%</span></div>
+              <div class="sb-track"><div class="sb-fill" data-w="88"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="sb-info"><span>HTML5 / CSS3</span><span>95%</span></div>
+              <div class="sb-track"><div class="sb-fill" data-w="95"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="sb-info"><span>Tailwind CSS</span><span>85%</span></div>
+              <div class="sb-track"><div class="sb-fill" data-w="85"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="sb-info"><span>Next.js</span><span>75%</span></div>
+              <div class="sb-track"><div class="sb-fill" data-w="75"></div></div>
+            </div>
+          </div>
+          <div class="skill-icons">
+            <div class="skill-icon-card">⚛<span>React</span></div>
+            <div class="skill-icon-card">📜<span>JS</span></div>
+            <div class="skill-icon-card">🎨<span>CSS3</span></div>
+            <div class="skill-icon-card">🔷<span>Next.js</span></div>
+            <div class="skill-icon-card">💨<span>Tailwind</span></div>
+          </div>
+        </div>
+        <!-- Backend -->
+        <div class="skill-panel" id="tab-backend">
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <div class="sb-info"><span>Java</span><span>92%</span></div>
+              <div class="sb-track"><div class="sb-fill" data-w="92"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="sb-info"><span>Spring Boot</span><span>85%</span></div>
+              <div class="sb-track"><div class="sb-fill" data-w="85"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="sb-info"><span>Node.js</span><span>78%</span></div>
+              <div class="sb-track"><div class="sb-fill" data-w="78"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="sb-info"><span>REST APIs</span><span>90%</span></div>
+              <div class="sb-track"><div class="sb-fill" data-w="90"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="sb-info"><span>Data Structures & Algorithms</span><span>80%</span></div>
+              <div class="sb-track"><div class="sb-fill" data-w="80"></div></div>
+            </div>
+          </div>
+          <div class="skill-icons">
+            <div class="skill-icon-card">☕<span>Java</span></div>
+            <div class="skill-icon-card">🌿<span>Spring</span></div>
+            <div class="skill-icon-card">🟢<span>Node.js</span></div>
+            <div class="skill-icon-card">🔗<span>REST API</span></div>
+            <div class="skill-icon-card">🧮<span>DSA</span></div>
+          </div>
+        </div>
+        <!-- Database -->
+        <div class="skill-panel" id="tab-database">
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <div class="sb-info"><span>MySQL</span><span>85%</span></div>
+              <div class="sb-track"><div class="sb-fill" data-w="85"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="sb-info"><span>PostgreSQL</span><span>78%</span></div>
+              <div class="sb-track"><div class="sb-fill" data-w="78"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="sb-info"><span>MongoDB</span><span>72%</span></div>
+              <div class="sb-track"><div class="sb-fill" data-w="72"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="sb-info"><span>Redis</span><span>60%</span></div>
+              <div class="sb-track"><div class="sb-fill" data-w="60"></div></div>
+            </div>
+          </div>
+          <div class="skill-icons">
+            <div class="skill-icon-card">🗄<span>MySQL</span></div>
+            <div class="skill-icon-card">🐘<span>PostgreSQL</span></div>
+            <div class="skill-icon-card">🍃<span>MongoDB</span></div>
+            <div class="skill-icon-card">⚡<span>Redis</span></div>
+          </div>
+        </div>
+        <!-- Tools -->
+        <div class="skill-panel" id="tab-tools">
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <div class="sb-info"><span>Git / GitHub</span><span>90%</span></div>
+              <div class="sb-track"><div class="sb-fill" data-w="90"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="sb-info"><span>Docker</span><span>70%</span></div>
+              <div class="sb-track"><div class="sb-fill" data-w="70"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="sb-info"><span>Linux / Bash</span><span>75%</span></div>
+              <div class="sb-track"><div class="sb-fill" data-w="75"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="sb-info"><span>Postman</span><span>88%</span></div>
+              <div class="sb-track"><div class="sb-fill" data-w="88"></div></div>
+            </div>
+          </div>
+          <div class="skill-icons">
+            <div class="skill-icon-card">🐙<span>GitHub</span></div>
+            <div class="skill-icon-card">🐳<span>Docker</span></div>
+            <div class="skill-icon-card">🐧<span>Linux</span></div>
+            <div class="skill-icon-card">📮<span>Postman</span></div>
+          </div>
+        </div>
+        <!-- AI -->
+        <div class="skill-panel" id="tab-ai">
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <div class="sb-info"><span>OpenAI API</span><span>80%</span></div>
+              <div class="sb-track"><div class="sb-fill" data-w="80"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="sb-info"><span>Gemini API</span><span>75%</span></div>
+              <div class="sb-track"><div class="sb-fill" data-w="75"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="sb-info"><span>LangChain</span><span>65%</span></div>
+              <div class="sb-track"><div class="sb-fill" data-w="65"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="sb-info"><span>Machine Learning (Python)</span><span>60%</span></div>
+              <div class="sb-track"><div class="sb-fill" data-w="60"></div></div>
+            </div>
+          </div>
+          <div class="skill-icons">
+            <div class="skill-icon-card">🤖<span>OpenAI</span></div>
+            <div class="skill-icon-card">✨<span>Gemini</span></div>
+            <div class="skill-icon-card">🔗<span>LangChain</span></div>
+            <div class="skill-icon-card">🐍<span>Python</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS ========== -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">03 — Projects</span>
+        <h2 class="section-title">Selected Work</h2>
+      </div>
+      <div class="project-filters">
+        <button class="pf-btn active" data-filter="all">All</button>
+        <button class="pf-btn" data-filter="ai">AI / ML</button>
+        <button class="pf-btn" data-filter="fullstack">Full Stack</button>
+        <button class="pf-btn" data-filter="frontend">Frontend</button>
+        <button class="pf-btn" data-filter="backend">Backend</button>
+      </div>
+      <div class="projects-grid" id="projectsGrid">
+
+        <div class="project-card" data-category="ai fullstack">
+          <div class="pc-header">
+            <div class="pc-emoji">🤖</div>
+            <div class="pc-links">
+              <a href="#" class="pc-link" title="Live Demo">🔗</a>
+              <a href="#" class="pc-link" title="GitHub">⌨</a>
+            </div>
+          </div>
+          <div class="pc-body">
+            <h3>AI Resume Analyzer</h3>
+            <p>Full-stack app that uses OpenAI GPT to analyze resumes, extract skills, and match candidates with jobs. Built with React + Spring Boot + PostgreSQL.</p>
+          </div>
+          <div class="pc-tags">
+            <span>React</span><span>Spring Boot</span><span>OpenAI</span><span>PostgreSQL</span>
+          </div>
+        </div>
+
+        <div class="project-card featured" data-category="fullstack">
+          <div class="pc-header">
+            <div class="pc-emoji">📊</div>
+            <div class="pc-links">
+              <a href="#" class="pc-link" title="Live Demo">🔗</a>
+              <a href="#" class="pc-link" title="GitHub">⌨</a>
+            </div>
+          </div>
+          <div class="featured-tag">⭐ Featured</div>
+          <div class="pc-body">
+            <h3>E-Commerce Dashboard</h3>
+            <p>Enterprise-grade admin dashboard with real-time analytics, order management, inventory tracking and role-based authentication. Handles 10K+ transactions.</p>
+          </div>
+          <div class="pc-tags">
+            <span>React</span><span>Java</span><span>MySQL</span><span>REST API</span>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="ai">
+          <div class="pc-header">
+            <div class="pc-emoji">💬</div>
+            <div class="pc-links">
+              <a href="#" class="pc-link">🔗</a>
+              <a href="#" class="pc-link">⌨</a>
+            </div>
+          </div>
+          <div class="pc-body">
+            <h3>AI Chatbot Platform</h3>
+            <p>Embeddable chatbot builder with Gemini API integration. Businesses create custom trained bots with no-code interface and analytics dashboard.</p>
+          </div>
+          <div class="pc-tags">
+            <span>Node.js</span><span>React</span><span>Gemini API</span><span>MongoDB</span>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="fullstack backend">
+          <div class="pc-header">
+            <div class="pc-emoji">🏥</div>
+            <div class="pc-links">
+              <a href="#" class="pc-link">🔗</a>
+              <a href="#" class="pc-link">⌨</a>
+            </div>
+          </div>
+          <div class="pc-body">
+            <h3>Hospital Management System</h3>
+            <p>Comprehensive HMS with patient records, appointment scheduling, billing, and doctor management. Spring Boot microservices architecture.</p>
+          </div>
+          <div class="pc-tags">
+            <span>Spring Boot</span><span>MySQL</span><span>React</span><span>JWT</span>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="frontend">
+          <div class="pc-header">
+            <div class="pc-emoji">🌤</div>
+            <div class="pc-links">
+              <a href="#" class="pc-link">🔗</a>
+              <a href="#" class="pc-link">⌨</a>
+            </div>
+          </div>
+          <div class="pc-body">
+            <h3>Weather Intelligence App</h3>
+            <p>Beautiful weather app with 7-day forecasts, interactive maps, hourly charts, and AI-powered clothing suggestions based on weather conditions.</p>
+          </div>
+          <div class="pc-tags">
+            <span>React</span><span>OpenWeather API</span><span>Chart.js</span>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="ai fullstack">
+          <div class="pc-header">
+            <div class="pc-emoji">📚</div>
+            <div class="pc-links">
+              <a href="#" class="pc-link">🔗</a>
+              <a href="#" class="pc-link">⌨</a>
+            </div>
+          </div>
+          <div class="pc-body">
+            <h3>Smart Learning Platform</h3>
+            <p>AI-driven e-learning platform that personalizes course recommendations, generates quizzes from content, and tracks learning progress with analytics.</p>
+          </div>
+          <div class="pc-tags">
+            <span>React</span><span>Spring Boot</span><span>AI/ML</span><span>Redis</span>
+          </div>
+        </div>
+
+      </div>
+      <div class="projects-cta">
+        <a href="https://github.com" target="_blank" class="btn-secondary">View All on GitHub →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FREELANCE / HIRE ME ========== -->
+  <section id="freelance" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">04 — Hire Me</span>
+        <h2 class="section-title">Let's Build Something Amazing</h2>
+      </div>
+      <div class="hire-grid">
+        <div class="hire-left">
+          <div class="available-badge">
+            <span class="av-dot"></span>
+            <span>Available for Freelance Projects</span>
+          </div>
+          <p class="hire-intro">
+            I help startups, businesses, and entrepreneurs bring their digital products to life. From MVP to production-ready — I deliver clean, scalable, and modern solutions.
+          </p>
+          <div class="services-grid">
+            <div class="service-card">
+              <span class="svc-icon">🌐</span>
+              <h4>Full Stack Development</h4>
+              <p>End-to-end web applications with React frontend and Java/Node backend</p>
+            </div>
+            <div class="service-card">
+              <span class="svc-icon">🎨</span>
+              <h4>Frontend Development</h4>
+              <p>Pixel-perfect, responsive UIs with smooth animations and interactions</p>
+            </div>
+            <div class="service-card">
+              <span class="svc-icon">⚙</span>
+              <h4>Backend APIs</h4>
+              <p>Scalable REST/GraphQL APIs with authentication, caching, and optimization</p>
+            </div>
+            <div class="service-card">
+              <span class="svc-icon">🤖</span>
+              <h4>AI Integration</h4>
+              <p>Embed GPT, Gemini, or custom ML models into your existing product</p>
+            </div>
+            <div class="service-card">
+              <span class="svc-icon">💼</span>
+              <h4>Portfolio Sites</h4>
+              <p>Premium portfolio and landing pages that convert visitors into clients</p>
+            </div>
+            <div class="service-card">
+              <span class="svc-icon">📊</span>
+              <h4>Dashboard Development</h4>
+              <p>Real-time dashboards with analytics, charts, and admin panels</p>
+            </div>
+          </div>
+          <div class="trust-badges">
+            <div class="trust-item">⚡ Fast Delivery</div>
+            <div class="trust-item">✅ Clean Code</div>
+            <div class="trust-item">📞 24h Response</div>
+            <div class="trust-item">🔄 Free Revisions</div>
+          </div>
+        </div>
+        <div class="hire-right">
+          <div class="contact-form-card">
+            <h3>Start a Project</h3>
+            <form id="hireForm" onsubmit="handleHireForm(event)">
+              <div class="form-group">
+                <label>Your Name</label>
+                <input type="text" placeholder="John Smith" required />
+              </div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" placeholder="john@company.com" required />
+              </div>
+              <div class="form-group">
+                <label>Project Type</label>
+                <select>
+                  <option>Full Stack Application</option>
+                  <option>Frontend Development</option>
+                  <option>Backend API</option>
+                  <option>AI Integration</option>
+                  <option>Portfolio Website</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Budget Range</label>
+                <select>
+                  <option>$500 - $1,000</option>
+                  <option>$1,000 - $3,000</option>
+                  <option>$3,000 - $5,000</option>
+                  <option>$5,000+</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Tell me about your project</label>
+                <textarea rows="4" placeholder="Describe your project, goals, and timeline..."></textarea>
+              </div>
+              <button type="submit" class="btn-primary full-width">
+                <span>Send Project Brief</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+              </button>
+            </form>
+            <div class="alt-contact">
+              <span>Or reach me directly</span>
+              <div class="alt-btns">
+                <a href="https://wa.me/919999999999" target="_blank" class="alt-btn whatsapp">
+                  💬 WhatsApp
+                </a>
+                <a href="mailto:alex@example.com" class="alt-btn email">
+                  ✉ Email
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section id="testimonials" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">05 — Testimonials</span>
+        <h2 class="section-title">What People Say</h2>
+      </div>
+      <div class="testimonials-track" id="testimonialTrack">
+        <div class="testimonial-card">
+          <div class="tc-stars">★★★★★</div>
+          <p>"Alex delivered an exceptional e-commerce platform that exceeded all our expectations. The code quality and attention to detail is remarkable. Highly recommend!"</p>
+          <div class="tc-author">
+            <div class="tc-avatar">SM</div>
+            <div>
+              <strong>Sarah Mitchell</strong>
+              <span>CEO, TechVentures Inc.</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="tc-stars">★★★★★</div>
+          <p>"The AI chatbot integration Alex built increased our customer engagement by 40%. Brilliant developer — fast, communicative, and delivers exactly what you need."</p>
+          <div class="tc-author">
+            <div class="tc-avatar">RK</div>
+            <div>
+              <strong>Rahul Kumar</strong>
+              <span>Product Manager, StartupX</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="tc-stars">★★★★★</div>
+          <p>"Outstanding work on our hospital management system. Alex's Spring Boot expertise and clean architecture made our platform handle thousands of patients seamlessly."</p>
+          <div class="tc-author">
+            <div class="tc-avatar">PJ</div>
+            <div>
+              <strong>Dr. Priya Joshi</strong>
+              <span>CTO, MediConnect</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="tc-stars">★★★★★</div>
+          <p>"Alex was my internship mentor — his guidance on system design and DSA transformed how I think about software. An exceptional engineer and even better teacher."</p>
+          <div class="tc-author">
+            <div class="tc-avatar">AS</div>
+            <div>
+              <strong>Aman Sharma</strong>
+              <span>Junior Developer, Google</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-dots" id="testimonialDots"></div>
+    </div>
+  </section>
+
+  <!-- ========== SOCIAL ========== -->
+  <section id="social" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">06 — Connect</span>
+        <h2 class="section-title">Find Me Online</h2>
+      </div>
+      <div class="social-grid">
+        <a href="https://linkedin.com" target="_blank" class="social-card">
+          <div class="sc-icon linkedin">in</div>
+          <div class="sc-info">
+            <h4>LinkedIn</h4>
+            <span>Professional Network</span>
+          </div>
+          <div class="sc-arrow">→</div>
+        </a>
+        <a href="https://github.com" target="_blank" class="social-card">
+          <div class="sc-icon github">⌨</div>
+          <div class="sc-info">
+            <h4>GitHub</h4>
+            <span>Open Source Projects</span>
+          </div>
+          <div class="sc-arrow">→</div>
+        </a>
+        <a href="https://leetcode.com" target="_blank" class="social-card">
+          <div class="sc-icon leetcode">🧮</div>
+          <div class="sc-info">
+            <h4>LeetCode</h4>
+            <span>500+ Problems Solved</span>
+          </div>
+          <div class="sc-arrow">→</div>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="social-card">
+          <div class="sc-icon instagram">📸</div>
+          <div class="sc-info">
+            <h4>Instagram</h4>
+            <span>Tech Journey & Life</span>
+          </div>
+          <div class="sc-arrow">→</div>
+        </a>
+        <a href="mailto:alex@example.com" class="social-card">
+          <div class="sc-icon email-icon">✉</div>
+          <div class="sc-info">
+            <h4>Email</h4>
+            <span>alex@example.com</span>
+          </div>
+          <div class="sc-arrow">→</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">07 — Contact</span>
+        <h2 class="section-title">Get In Touch</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="ci-item">
+            <div class="ci-icon">📍</div>
+            <div>
+              <h4>Location</h4>
+              <span>Available Worldwide (Remote)</span>
+            </div>
+          </div>
+          <div class="ci-item">
+            <div class="ci-icon">📧</div>
+            <div>
+              <h4>Email</h4>
+              <a href="mailto:alex@example.com">alex@example.com</a>
+            </div>
+          </div>
+          <div class="ci-item">
+            <div class="ci-icon">⏰</div>
+            <div>
+              <h4>Response Time</h4>
+              <span>Within 24 hours</span>
+            </div>
+          </div>
+          <div class="availability-card">
+            <div class="av-row">
+              <span class="av-dot-green"></span>
+              <strong>Open to Opportunities</strong>
+            </div>
+            <p>Currently accepting freelance projects and full-time opportunities starting immediately.</p>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm" onsubmit="handleContactForm(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" placeholder="John" required />
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" placeholder="Smith" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="john@example.com" required />
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <input type="text" placeholder="Project Inquiry / Job Opportunity" required />
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea rows="5" placeholder="Tell me about your project or opportunity..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary full-width">
+            <span>Send Message</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          </button>
+          <div id="form-success" class="form-success" style="display:none">
+            ✅ Message sent successfully! I'll reply within 24 hours.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="logo-bracket">&lt;</span>DEV<span class="logo-accent">/</span><span class="logo-bracket">&gt;</span>
+          </div>
+          <p>Building premium digital experiences with modern technology. Available worldwide for freelance and full-time opportunities.</p>
+          <div class="footer-social">
+            <a href="https://linkedin.com" target="_blank" title="LinkedIn">in</a>
+            <a href="https://github.com" target="_blank" title="GitHub">⌨</a>
+            <a href="https://leetcode.com" target="_blank" title="LeetCode">🧮</a>
+            <a href="mailto:alex@example.com" title="Email">✉</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#freelance">Hire Me</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#freelance">Full Stack Dev</a></li>
+            <li><a href="#freelance">Frontend Dev</a></li>
+            <li><a href="#freelance">Backend APIs</a></li>
+            <li><a href="#freelance">AI Integration</a></li>
+            <li><a href="#freelance">Dashboards</a></li>
+          </ul>
+        </div>
+        <div class="footer-stack">
+          <h4>Built With</h4>
+          <div class="stack-tags">
+            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Canvas API</span>
+          </div>
+          <div class="footer-status">
+            <span class="status-dot"></span>
+            <span>All systems operational</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Alex Morgan. All rights reserved.</span>
+        <span>Designed & Built with ❤ by Alex Morgan</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING CONTACT BUTTONS -->
+  <div class="floating-contacts">
+    <a href="https://wa.me/919999999999" target="_blank" class="fc-btn fc-wa" title="WhatsApp">💬</a>
+    <a href="mailto:alex@example.com" class="fc-btn fc-em" title="Email">✉</a>
+  </div>
+
+  <!-- AI CHATBOT -->
+  <div class="chatbot-container" id="chatbotContainer">
+    <div class="chatbot-header">
+      <div class="cb-title">
+        <span class="cb-dot"></span>
+        <span>Ask Me Anything</span>
+      </div>
+      <button onclick="toggleChatbot()" class="cb-close">✕</button>
+    </div>
+    <div class="chatbot-messages" id="chatMessages">
+      <div class="cb-msg bot">
+        👋 Hi! I'm Alex's AI assistant. Ask me about skills, projects, availability, or how to hire Alex!
+      </div>
+    </div>
+    <div class="chatbot-input">
+      <input type="text" id="chatInput" placeholder="Ask about skills, projects..." onkeypress="handleChatKey(event)" />
+      <button onclick="sendChatMessage()">→</button>
+    </div>
+  </div>
+  <button class="chatbot-trigger" id="chatbotTrigger" onclick="toggleChatbot()">
+    <span class="ct-icon">🤖</span>
+    <span class="ct-label">AI Chat</span>
+  </button>
+
+  <script src="main.js"></script>
+</body>
+</html>
